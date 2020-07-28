@@ -1,6 +1,6 @@
 import express from 'express';
 import diaryService from '../services/diaryService';
-import toNewDiaryEntry from '../utils';
+import utils from '../utils';
 
 const router = express.Router();
 
@@ -10,7 +10,7 @@ router.get('/', (_req, res) => {
 
 router.post('/', (req, res) => {
   try {
-    const newDiaryEntry = toNewDiaryEntry(req.body);
+    const newDiaryEntry = utils.toNewDiaryEntry(req.body);
 
     const addedEntry = diaryService.addDiary(newDiaryEntry);
     res.json(addedEntry);

@@ -31,7 +31,10 @@ export interface DiagnoseEntry {
   latin?: string;
 }
 
-export type Gender = 'male' | 'female';
+export enum Gender {
+  Male = 'male',
+  Female = 'female',
+}
 
 export interface PatientEntry {
   id: string;
